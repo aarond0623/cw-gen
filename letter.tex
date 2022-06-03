@@ -1,0 +1,35 @@
+\documentclass{article}
+\newlength{\pzlsize}
+\newlength{\cluesep}
+\usepackage[large]{cwpuzzle}
+\setlength{\pzlsize}{360pt} %300 = 15x15, 420 = 21x21, large 15x15 = 360
+\setlength{\cluesep}{1em}
+
+
+\usepackage{geometry}
+\geometry{margin=0.45in}
+
+\input{crossword.tex}
+
+\newflowframe[1]{\colwidth}{\dimexpr \textheight - \titleh}{0pt}{0pt}
+\newflowframe[1]{\colwidth}{\dimexpr \textheight - \pzlfram - \titleh}{\dimexpr \colwidth+\colsep}{0pt}
+\newflowframe[1]{\colwidth}{\dimexpr \textheight - \pzlfram - \titleh}{\dimexpr 2\colwidth + 2\colsep}{0pt}
+\newflowframe[1]{\colwidth}{\dimexpr \textheight - \pzlfram - \titleh}{\dimexpr 3\colwidth + 3\colsep}{0pt}
+
+\newstaticframe[1]{\threecol}{\pzlsize}{\dimexpr \colwidth + 0.5\colsep}{\dimexpr \textheight - \pzlfram - \titleh}[puzzle]
+\newstaticframe[1]{\textwidth}{\titleh}{0pt}{\dimexpr \textheight - \titleh}[title]
+
+\begin{document}
+\thispagestyle{empty}
+\begin{staticcontents*}{title}
+\cwhead
+\end{staticcontents*}
+
+\begin{staticcontents*}{puzzle}
+\input{puzzle.tex}
+\end{staticcontents*}
+
+\widowpenalty=10000
+\large
+\input{clues.tex}
+\end{document}

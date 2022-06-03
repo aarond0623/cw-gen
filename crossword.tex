@@ -1,0 +1,72 @@
+\newcommand{\cwlogo}{LATimes.pdf}
+\newcommand{\cwtitle}{}
+\newcommand{\cwauthor}{Jeffrey Wechsler}
+\newcommand{\cwdate}{Jun.\ 3, 2022}
+
+\usepackage[T1]{fontenc}
+\usepackage{librefranklin}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[none]{hyphenat}
+\usepackage[autostyle=try, english = american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage[inline]{enumitem}
+\usepackage[xspace]{ellipsis}
+\newcommand{\elip}{\textellipsis}
+\usepackage{flowfram}
+\usepackage{multicol}
+
+\setlength{\parskip}{0pt}
+\setlength{\partopsep}{0pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\colwidth}
+\newlength{\colsep}
+\newlength{\threecol}
+\newlength{\pzlfram}
+\newlength{\titleh}
+
+\setlength{\colsep}{5mm}
+\setlength{\columnsep}{5mm}
+\setlength{\colwidth}{\dimexpr 0.25\textwidth - 0.75\colsep}
+\setlength{\threecol}{\dimexpr 3\colwidth + 2\colsep}
+\setlength{\pzlfram}{\dimexpr \pzlsize + 5mm}
+\setlength{\titleh}{30pt}
+
+\setlist[enumerate]{%
+    label=\small\bfseries\arabic*,%
+    parsep=0pt,%
+    itemsep=0pt,%
+    topsep=0pt,%
+    partopsep=0pt,%
+    leftmargin=1.3em%
+}
+
+\newenvironment{clues}[1]{%
+    \begin{center}\textbf{\MakeUppercase{\Large\sffamily#1}}\end{center}%
+    \begin{enumerate}\raggedright%
+    }{\end{enumerate}%
+}
+\newcommand{\clue}[1]{%
+    \setcounter{enumi}{#1}%
+    \addtocounter{enumi}{-1}%
+    \item%
+}
+\newcommand{\blank}{%
+    \underline{\hspace{2em}}%
+}
+
+\newcommand{\cwhead}{%
+    {%
+        \includegraphics[height=0.3in]{\cwlogo}%
+        \hspace{2em}%
+        {\LARGE \sffamily \bfseries \MakeUppercase{\cwtitle}}%
+        \hfill%
+        \begin{tabular}{l}%
+            \cwauthor\\
+            \cwdate
+        \end{tabular}%
+    }%
+}

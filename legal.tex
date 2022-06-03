@@ -1,0 +1,30 @@
+\documentclass{article}
+\newlength{\pzlsize}
+\newlength{\cluesep}
+%\usepackage[large]{cwpuzzle}
+\usepackage{cwpuzzle}
+%\setlength{\PuzzleUnitlength}{30pt}
+\setlength{\pzlsize}{420pt} %300 = 15x15, 420 = 21x21, large 15x15 = 360
+\setlength{\cluesep}{1em}
+
+\usepackage{geometry}
+\geometry{legalpaper, landscape, margin=0.5in}
+
+\input{crossword.tex}
+
+\begin{document}
+\thispagestyle{empty}
+\cwhead
+
+\begin{minipage}[c][\dimexpr \textheight - \titleh][c]{\dimexpr \textwidth - \pzlfram}
+\begin{multicols}{3}
+\widowpenalty=10000
+%\large
+\footnotesize
+\input{clues.tex}
+\end{multicols}
+\end{minipage}
+\begin{minipage}[c][\dimexpr \textheight - \titleh][c]{\pzlfram}
+\input{puzzle.tex}
+\end{minipage}
+\end{document}

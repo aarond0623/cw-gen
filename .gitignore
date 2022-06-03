@@ -1,3 +1,9 @@
+# Puzzle and Clue files
+puzzle.txt
+puzzle.tex
+clues.txt
+clues.tex
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
