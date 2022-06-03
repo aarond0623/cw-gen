@@ -3,6 +3,7 @@ puzzle.txt
 puzzle.tex
 clues.txt
 clues.tex
+cw_info.tex
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
