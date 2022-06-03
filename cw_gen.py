@@ -45,9 +45,10 @@ def generate_clues(across_nums, down_nums, filename=None, out=None):
     clues = [re.sub(r'^[0-9]+\. ', r'', x) for x in clues]
     
     # Find a line break in the clues that separates Across from Down
+    # Also eliminate any trailing or leading blank lines.
     i = clues.index('')
-    across_clues = clues[0:i]
-    down_clues = clues[i+1:]
+    across_clues = [x for x in clues[0:i] if x != '']
+    down_clues = [x for x in clues[i+1:] if x != '']
     
     if not out:
         out = input("Enter filename to save clues: ")
